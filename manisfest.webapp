@@ -22,7 +22,7 @@
             }
         }
     },
-    "default_locale": "es",
+    "default_locale": "en",
     "permissions": {     
     },
     "fullscreen": "true"
