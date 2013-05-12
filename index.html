@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="UTF-8">
+    <title>Notes App</title>
+    
+	<!-- libs -->
+  	
+  	<!-- Models, Views, utils -->
+    <script type="text/javascript" src="js/utils/storage.js"></script>
+
+	<meta name="description" content="Notes App">
+    <meta name="author" content="Fatima Gilmartin Luquero (fatymoore@gmail.com)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/ungo-2.1.0/lungo.css">
+    <link rel="stylesheet" href="css/ungo-2.1.0/lungo.icon.css">
+    
+</head>
+	
+ <body class="app">
+ 	<section id="main" data-transition="">
+		
+ 		<header data-title="Notes App">
+ 			<nav> 				
+ 				<a href="#Notes" data-router="article" class="left">
+            		Home
+        		</a>
+        		
+ 				<a href="#addNotes" data-router="article" class="right">
+            		+
+        		</a>
+        	</nav>
+ 		</header>
+ 		
+ 		<footer>
+	        <nav>
+	            <a href="#main" data-router="article" data-icon="home"></a>
+	            <a href="#writeNotes" data-router="section" data-icon="right"></a>
+	        </nav>
+    	</footer>
+ 	
+	    <article id="main-article" class="active list indented scroll">
+	        <ul>
+	            <li class="arrow">
+	                <strong>li.arrow 1 + Strong</strong>
+	            </li>
+	            <li class="arrow">
+	                <strong>li.arrow 2 + Strong</strong>
+	            </li>
+	        </ul>
+	    </article>
+	</section>
+	
+	<section id="writeNotes">
+		<header data-back="home blue"></header>
+		
+		<article id="write" class="active">
+        	Write
+        	<a href="#back" data-router="section" data-icon="left">VOLVER</a>    	
+    	</article>		
+	</section>
+
+
+	<!-- libs -->
+	<script type="text/javascript" src="libs/quojs/quo.js"></script>
+  	<script type="text/javascript" src="libs/lungo-2.1.0/lungo.js"></script>
+
+    <!-- Lungo - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 		'Notes App',
+            version:	'1.0',
+            history:	false
+        });
+    </script>
+    
+</body>
+
+</html>
+
