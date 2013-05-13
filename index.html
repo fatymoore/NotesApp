@@ -37,8 +37,7 @@
  				<a href="#main" data-router="article" class="left" data-icon="home">
             		Home
         		</a>
-        		
- 				<a href="#writeNotes" data-router="article" class="right" data-icon='plus'></a>
+ 				<a href="#writeNotes" data-router="section" class="right" data-icon='plus'></a>
         	</nav>
  		</header>
  		<article id="main-article" class="active list indented scroll">
@@ -47,18 +46,22 @@
  		<footer>
 	        <nav>
 	            <a href="#main" data-router="article" data-icon="home"></a>
-	            <a href="#writeNotes" data-router="article" data-icon="right"></a>
+	            <a href="#writeNotes" data-router="section" data-icon="right"></a>
 	        </nav>
     	</footer>
 	</section>
 	
 	<section id="writeNotes">
-		<header data-back="home blue"></header>
+		<header data-back="home blue" data-title="Write"></header>
 		
 		<article id="write" class="active">
         	Write
-        	<a href="#back" data-router="section" data-icon="left">VOLVER</a>
-    	</article>		
+    	</article>
+        <footer>
+            <nav>
+                <a href="#back" data-router="section" data-icon="left">VOLVER</a>
+            </nav>
+        </footer>		
 	</section>
 
 	<!-- libs -->
