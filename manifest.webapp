@@ -2,10 +2,11 @@
     "version": "1.0",
     "name": "Notes",
     "description": "Aplicacion de notas",
-    "launch_path": "/index.html",
+    "launch_path": "/index.html",    
+    "default_locale": "es-ES",
     "icons": {
-        "16": "/img/icons/logo-16.png",
-        "48": "/img/icons/logo-48.png",
+        "16": "/img/icons/logo-128.png",
+        "60": "/img/icons/logo-128.png",
         "128": "/img/icons/logo-128.png"
     },
     "developer": {
@@ -14,16 +15,15 @@
     },
     "installs_allowed_from": ["*"],
     "locales": {
-        "en": {
+        "es": {
             "description": "Aplicación de notas",
             "developer": {
                 "name": "Fatima Gilmartin Luquero",
-        		"url": "fatymoore@gmail.com"
+         		"url": "fatymoore@gmail.com"
             }
         }
     },
-    "default_locale": "en",
-    "permissions": {     
+    "permissions": {
     },
     "fullscreen": "true"
 }
