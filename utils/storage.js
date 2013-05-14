@@ -29,6 +29,8 @@ Storage.save = function( key, data ) {
 Storage.getMessagesList = function () {
     if ( typeof localStorage !== undefined ) {
         return JSON.parse( localStorage.getItem( StorageKeys.keyMessagesList ) );
+    } else {
+    	
     }
     
     return null;
