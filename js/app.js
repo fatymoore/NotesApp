@@ -26,3 +26,7 @@ $(document).ready(function() {
 		$('#main-article').append(template);             
 	}
 });
+
+var saveNote = function() {
+	//TODO: get inputs type, description, priority
+};
