@@ -20,6 +20,13 @@ var saveNote = function() {
 	localStorage.setItem('notesList', list);
 };
 
+var clearForm = function() {
+	$('#title').val();
+	$('#message').val();
+
+
+};
+
 $(document).ready(function() {
 
 	var updateList = function() {
@@ -62,6 +69,7 @@ $(document).ready(function() {
 
 	$('#save').click(function() {
 		saveNote();
+		clearForm();
 		updateList();
 	});
 /*
