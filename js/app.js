@@ -19,11 +19,14 @@ $(document).ready(function() {
 	*/
 	
 	var messageList = Storage.getMessagesList();
-
-	for (i = 0; i < messageList.length; i++) {
-		var messageItem = messageList[i];
-		var template = _.template($('#tmpl_foursquare_list').html(), messageItem);
-		$('#main-article').append(template);             
+	
+	if (messageList != null)
+	{
+		for (i = 0; i < messageList.length; i++) {
+			var messageItem = messageList[i];
+			var template = _.template($('#tmpl_messages_list').html(), messageItem);
+			$('#main-article').append(template);
+		}
 	}
 });
 
