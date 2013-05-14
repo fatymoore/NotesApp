@@ -18,7 +18,7 @@ $(document).ready(function() {
 	}
 	*/
 
-	var messageList = JSON.parse(localStorage.get('notesList'));
+	var messageList = JSON.parse(localStorage.getItem('notesList'));
 	if (messageList != null)
 	{
 		for (i = 0; i < messageList.length; i++) {
@@ -43,8 +43,8 @@ var saveNote = function() {
 		priority: priority
 	};
 
-	notesList = JSON.parse(localStorage.get('notesList'));
+	notesList = JSON.parse(localStorage.getItem('notesList'));
 	notesList.push(note);
  	list = JSON.stringify(notesList);
-	localStorage.save('notesList', list);
+	localStorage.setItem('notesList', list);
 };
