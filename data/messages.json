@@ -2,23 +2,28 @@
     "messagesList": [
         {
 			"id": "1",
-            "message": "prueba 1"         
+			"title" : "title 1",
+            "description": "prueba 1"         
         }, 
         {
 			"id": "2",
-            "message": "prueba 2"         
+			"title" : "title 2",
+            "description": "prueba 2"           
         }, 
         {
 			"id": "3",
-            "message": "prueba 3"         
+			"title" : "title 3",
+            "description": "prueba 3"            
         }, 
         {
 			"id": "4",
-            "message": "prueba 4"         
+			"title" : "title 4",
+            "description": "prueba 4"             
         }, 
         {
 			"id": "5",
-            "message": "prueba 5"         
+			"title" : "title 5",
+            "description": "prueba 5"           
         }, 
    ]
 }
