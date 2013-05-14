@@ -33,6 +33,12 @@
 
     <script type="text/javascript" src='js/app.js'></script>
 
+    <style>
+        a>span {
+            pointer-events: none;
+        }
+    </style>
+
 </head>
 
  <body class="app">
@@ -42,18 +48,11 @@
  		<header data-title="Notes App">
  			<nav>
  				<a href="#main" data-router="article" class="left" data-icon="home"></a>
- 				<a href="#writeNotes" data-router="section" class="right" data-icon='plus'></a>
+ 				<a href="#writeNotes" data-router="section" class="right" data-icon='pencil'></a>
         	</nav>
  		</header>
  		<article id="main-article" class="active list indented scroll">
             <ul>
-	       	<!--
-	            <li class="arrow">
-	                <strong>li.arrow 1 + Strong</strong>
-	            </li>
-	            <li class="arrow">
-	                <strong>li.arrow 2 + Strong</strong>
-	            </li> -->
             </ul>
         </article>
  		<footer>
@@ -68,11 +67,6 @@
 		<header data-back="home blue" data-title="Write"></header>
 
     	<article id="write" class="active">
-			<!--
-            <label for='title'>Title</label><input type='text' id='title' name='title' placeholder='title' required/> <br>
-            <label for="description">Description</label><input type='comment' id='description' name='description' placeholder='description'/> </br>
-            <label for="Priority"></label><input type='number' min='1' max='5' value='1' id='priority' name='priority'/>
-           -->
 
 			<section id="form" data-transition="slide" class="show active">
 				<div class="form">
@@ -86,7 +80,7 @@
 		            </fieldset>
                     <fieldset>
                         <label for="Priority"></label>
-                        <input type='number' min='1' max='5' value='1' id='priority' name='priority'/>
+                        <input type='range' min='1' max='5' value='1' id='priority' name='priority'/>
                     </fieldset>
 	        	</div>
 			</section>
@@ -94,8 +88,7 @@
         <footer>
             <nav>
                 <a href="#back" data-router="section" data-icon="left"></a>
-
-                <a id="save" data-router='section' data-icon='check' onclick='saveNote();'></a>
+                <a href='#back' id="save" data-router='section' data-icon='check'></a>
             </nav>
         </footer>
 	</section>
