@@ -15,3 +15,7 @@ $(document).ready(function() {
 		$('#main-article>ul').append("<li class='arrow'><b>"+note.title+"</b><p>"+note.description+"</p></li>");
 	}
 });
+
+var saveNote = function() {
+	//TODO: get inputs type, description, priority
+};
