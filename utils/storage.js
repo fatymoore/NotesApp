@@ -1,13 +1,12 @@
 //variables que serán 'keys' en el localstorage
 function keys() {
-    this.keyUsersList = "keyUsersList";
-    this.keyUserConversation = "keyUserConversation_";
-    this.keyThumbnails = "keyThumbnails_";
+    this.keyMessagesList = "keyMessagesList";
+   // this.keyMessage = "keyMessage_";
 }
 
 var StorageKeys = new keys(),
     Storage = {
-        usersList : null
+        messagesList : null
     };
 
 seen = [];
@@ -22,42 +21,44 @@ Storage.save = function( key, data ) {
     try {
         localStorage.setItem( key, data );
     } catch( e ) {
-	   	 TID.log.debug('"MAXIMUM LIMIT IN LocalStorage REACHED. Cleaning... ');
-		 alert(i18n.getPropertyValue("fullLocalStorage"));
+	   	 //TID.log.debug('"MAXIMUM LIMIT IN LocalStorage REACHED. Cleaning... ');
 		 Storage.clear();
     }
 }
 
-Storage.getUsersList = function () {
+Storage.getMessagesList = function () {
     if ( typeof localStorage !== undefined ) {
-        return JSON.parse( localStorage.getItem( StorageKeys.keyUsersList ) );
+        return JSON.parse( localStorage.getItem( StorageKeys.keyMessagesList ) );
     }
+    
     return null;
 };
 
-Storage.saveUsersList = function ( userList ) {
+Storage.saveMessagesList = function ( messageList ) {
     var element = null;
     var arrayList = [];
-    for ( var i = 0, l = userList.length; i < l; i++ ) {
-        var user = userList[i];
-        element = Parser.UserObjectToBackboneModel( user );
+    for ( var i = 0, l = messageList.length; i < l; i++ ) {
+        var message = messageList[i];
+        element = Parser.MessageObjectToBackboneModel( message );
         arrayList.push( element );
     }
 
-    Storage.save( StorageKeys.keyUsersList, JSON.stringify( arrayList ) );
+    Storage.save( StorageKeys.keyMessagesList, JSON.stringify( arrayList ) );
     if ( localStorage !== null ) {
-        this.usersList = localStorage.getItem( StorageKeys.keyUsersList );
+        this.messagesList = localStorage.getItem( StorageKeys.keyMessagesList );
     }
 }
 
-Storage.getUserConversation = function ( userId ) {
+/*
+
+Storage.getMessage = function ( messageId ) {
     if ( typeof( localStorage ) !== undefined ) {
-        return JSON.parse( localStorage.getItem( StorageKeys.keyUserConversation + userId ) );
+        return JSON.parse( localStorage.getItem( StorageKeys.keyMessage + messageId ) );
     }
     return null;
 }
 
-Storage.saveConversationMessage = function ( userId, messageEvent ) {
+Storage.saveMessage = function ( messageId, messageEvent ) {
 	var element = null;
 	if ( messageEvent.eventType == EventType.text ) {
 		element =  Parser.TextMessageModelToObject(messageEvent);
@@ -75,28 +76,28 @@ Storage.saveConversationMessage = function ( userId, messageEvent ) {
 	arrayList[ arrayList.length ] = element;
 	Storage.saveMessageList( userId, arrayList );
 }
-
-Storage.deleteConversationItem = function ( userId, messageCid ) {
+*/
+Storage.deleteMessageItem = function ( messageId ) {
 	//found the item, and delete it.
-	var messagesList = Storage.getUserConversation( userId );
+	var messagesList = Storage.getMessagesList( messageId );
 	if ( messagesList ) {
 		var i = messagesList.length -1;
-		var found = messagesList[ i ].cid == messageCid;
+		var found = messagesList[ i ].id == messageId;
 
 		while ( ! found && i > 0 ) {
-			found = messagesList[ i ].cid == messageCid;
+			found = messagesList[ i ].id == messageId;
 			if ( ! found ) {
 				i--;
 			}
 		}
-		if(found){
-			
+		
+		if(found){			
 			messagesList.splice(i, 1);			
-			Storage.saveMessageList(userId, messagesList); 
+			Storage.saveMessageList(messagesList); 
 		}			
 	}			
 }
-
+/*
 Storage.deleteConversation = function(userConnect) {
 	
 	var messagesList = Storage.getUserConversation(userConnect);
@@ -108,7 +109,8 @@ Storage.deleteConversation = function(userConnect) {
 		}
 	}			
 }
-
+*/
+/*
 Storage.replaceConversationMessage = function(userId, messageEvent, position){
 	var arrayList = Storage.getUserConversation(userId); 
 	arrayList[position] = messageEvent;	
@@ -127,4 +129,4 @@ Storage.saveMessageList = function(userId, array){
 	    return val
 	})); 
 }
-
+*/
