@@ -23,9 +23,15 @@ $(document).ready(function() {
 	{
 		for (i = 0; i < messageList.length; i++) {
 			var messageItem = messageList[i];
+			/*
 			var template = _.template($('#tmpl_messages_list').html(), messageItem);
-			$('#main-article').append(template);
-
+			$('#main-article>ul').append(template);
+			*/
+			$('#main-article>ul').append(""+
+				"<li class='arrow'><strong>"+messageItem.title+"</strong>"+
+				"<p>"+messageItem.description+"</p>"+
+				"<p>"+messageItem.priority+"</p>"+
+				"</li>");
 		}
 	}
 });
@@ -44,6 +50,9 @@ var saveNote = function() {
 	};
 
 	notesList = JSON.parse(localStorage.getItem('notesList'));
+	if (!notesList) {
+		notesList = [];
+	}
 	notesList.push(note);
  	list = JSON.stringify(notesList);
 	localStorage.setItem('notesList', list);
