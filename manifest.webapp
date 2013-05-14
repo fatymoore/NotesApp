@@ -1,6 +1,6 @@
 {
     "version": "1.0",
-    "name": "Notes",
+    "name": "Notes App",
     "description": "Aplicacion de notas",
     "launch_path": "/index.html",    
     "default_locale": "es-ES",
