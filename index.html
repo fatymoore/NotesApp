@@ -52,10 +52,14 @@
 	</section>
 	
 	<section id="writeNotes">
-		<header data-back="home blue" data-title="Write"></header>
+		<header data-back="home blue" data-title="Write">
+            Write      
+        </header>
 		
 		<article id="write" class="active">
-        	Write
+            <label for='title'>Title</label><input type='text' id='title' name='title' placeholder='title' required/> <br>
+            <label for="description">Description</label><input type='comment' id='description' name='description' placeholder='description'/> </br>
+            <label for="Priority"></label><input type='number' min='1' max='5' value='1' id='priority' name='priority'/>
     	</article>
         <footer>
             <nav>
