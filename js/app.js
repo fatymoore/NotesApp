@@ -23,8 +23,6 @@ var saveNote = function() {
 var clearForm = function() {
 	$('#title').val();
 	$('#message').val();
-
-
 };
 
 $(document).ready(function() {
