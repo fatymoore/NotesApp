@@ -5,9 +5,9 @@
     "launch_path": "/index.html",    
     "default_locale": "es-ES",
     "icons": {
-        "16": "/img/icons/logo-128.png",
-        "60": "/img/icons/logo-128.png",
-        "128": "/img/icons/logo-128.png"
+        "16": "/style/icons/logo-128.png",
+        "60": "/style/icons/logo-128.png",
+        "128": "/style/icons/logo-128.png"
     },
     "developer": {
         "name": "Fatima Gilmartin Luquero",
